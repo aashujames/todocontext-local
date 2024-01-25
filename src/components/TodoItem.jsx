@@ -45,8 +45,13 @@ function TodoItem({ todo }) {
                     if (todo.completed) return;
 
                     if (isTodoEditable) {
+                        console.log(isTodoEditable, todo.id);
                         editTodo();
-                    } else setIsTodoEditable((prev) => !prev);
+                    } else
+                        setIsTodoEditable((prev) => {
+                            console.log(!prev);
+                            return !prev;
+                        });
                 }}
                 disabled={todo.completed}
             >
